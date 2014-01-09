@@ -17,4 +17,17 @@ class StoryController extends RestfulController{
     StoryController() {
         super(Story)
     }
+
+    @Override
+    def index(){
+        def stories = Story.findAll("from Story as s order by s.submittedOn desc")
+        print("found stories")
+        respond stories
+
+    }
+
+
+
+
 }
+

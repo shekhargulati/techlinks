@@ -7,6 +7,7 @@ class UrlMappings {
             }
         }
         "/api/v1/stories"(resources:'Story')
+        "/api/v1/timeline"(resources: 'Story',action: 'timeline',controller: 'StoryController')
 
         "/"(view:"/index")
         "500"(view:'/error')
