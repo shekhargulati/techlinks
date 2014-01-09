@@ -6,8 +6,11 @@ class UrlMappings {
                 // apply constraints here
             }
         }
+        "/api/v1/stories"(resources:'Story')
+
         "/"(view:"/index")
         "500"(view:'/error')
+
 
 	}
 }

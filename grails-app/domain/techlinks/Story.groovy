@@ -2,7 +2,6 @@ package techlinks
 
 import grails.rest.Resource
 
-@Resource(uri = "/api/v1/stories", formats = "json")
 class Story {
 
     String url
