@@ -1,4 +1,5 @@
 import grails.rest.RestfulController
+import grails.transaction.Transactional
 import techlinks.Story
 
 /**
@@ -10,6 +11,7 @@ import techlinks.Story
  */
 
 
+@Transactional(readOnly = true)
 class StoryController extends RestfulController{
 
     static responseFormats = ['json','xml']
@@ -21,7 +23,6 @@ class StoryController extends RestfulController{
     @Override
     def index(){
         def stories = Story.findAll("from Story as s order by s.submittedOn desc")
-        print("found stories")
         respond stories
 
     }
